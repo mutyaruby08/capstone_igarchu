@@ -20,118 +20,121 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-            constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height,
-                maxWidth: MediaQuery.of(context).size.width),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-                kPrimaryLightColor,
-                kPrimaryLightColor,
-              ], begin: Alignment.topLeft, end: Alignment.centerRight),
-            ),
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "iGarchu",
-                          style: TextStyle(
-                              color: kbutton1,
-                              fontSize: 40.0,
-                              fontWeight: FontWeight.w800),
-                        ),
-                        const Upside(
-                          imgUrl: "assets/images/PetLover.png",
-                        ),
-                      ]),
-                ),
-                Expanded(
-                  flex: 4,
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                        )),
-                    child: Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Login",
-                                style: TextStyle(
-                                    color: kbutton2,
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 30.0),
-                              TextField(
-                                  //change value for email
-                                  // onChanged: (value) => ,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      hintText: "E-mail",
-                                      prefixIcon:
-                                          Icon(Icons.email, color: kbutton2))),
-                              SizedBox(height: 30.0),
-                              TextField(
-                                  //change value for password
-                                  // onChanged: (value) => ,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
-                                        borderSide: BorderSide.none,
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      hintText: "Password",
-                                      prefixIcon:
-                                          Icon(Icons.key, color: kbutton2))),
-                              SizedBox(height: 20.0),
-                              RoundedButton(
-                                text: 'LOGIN',
-                                press: () {
-                                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>  PawtestScreen()));
-                                },
-                              ),
-
-                              UnderPart(
-                              title: "Don't have an account?",
-                              navigatorText: "Register here",
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>  register_screen()));
-                              },
-                            ),
-                            ])),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+              constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height,
+                  maxWidth: MediaQuery.of(context).size.width),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  kPrimaryLightColor,
+                  kPrimaryLightColor,
+                ], begin: Alignment.topLeft, end: Alignment.centerRight),
+              ),
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "iGarchu",
+                            style: TextStyle(
+                                color: kbutton1,
+                                fontSize: 40.0,
+                                fontWeight: FontWeight.w800),
+                          ),
+                          const Upside(
+                            imgUrl: "assets/images/PetLover.png",
+                          ),
+                        ]),
                   ),
-                ),
-              ],
-            )),
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30),
+                          )),
+                      child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Login",
+                                  style: TextStyle(
+                                      color: kbutton2,
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 30.0),
+                                TextField(
+                                    //change value for email
+                                    // onChanged: (value) => ,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        hintText: "E-mail",
+                                        prefixIcon: Icon(Icons.email,
+                                            color: kbutton2))),
+                                SizedBox(height: 30.0),
+                                TextField(
+                                    //change value for password
+                                    // onChanged: (value) => ,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        hintText: "Password",
+                                        prefixIcon:
+                                            Icon(Icons.key, color: kbutton2))),
+                                SizedBox(height: 20.0),
+                                RoundedButton(
+                                  text: 'LOGIN',
+                                  press: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                PawtestScreen()));
+                                  },
+                                ),
+                                UnderPart(
+                                  title: "Don't have an account?",
+                                  navigatorText: "Register here",
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                register_screen()));
+                                  },
+                                ),
+                              ])),
+                    ),
+                  ),
+                ],
+              )),
+        ),
       ),
     );
   }
