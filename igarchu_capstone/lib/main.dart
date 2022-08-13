@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
        primaryColor: kPrimaryLightColor,
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Poppins', fontWeight: FontWeight.bold),
               )
       ),
-      home: LoginScreen(),
+      home: const register_screen(),
     );
   }
 }
