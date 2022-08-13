@@ -32,28 +32,24 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Expanded(
                   flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 36.0, horizontal: 15.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "iGarchu",
-                            style: TextStyle(
-                                color: kbutton1,
-                                fontSize: 40.0,
-                                fontWeight: FontWeight.w800),
-                          ),
-                          const Upside(
-                            imgUrl: "assets/images/PetLover.png",
-                          ),
-                        ]),
-                  ),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "iGarchu",
+                          style: TextStyle(
+                              color: kbutton1,
+                              fontSize: 40.0,
+                              fontWeight: FontWeight.w800),
+                        ),
+                        const Upside(
+                          imgUrl: "assets/images/PetLover.png",
+                        ),
+                      ]),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 4,
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -108,6 +104,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       prefixIcon:
                                           Icon(Icons.key, color: kbutton2))),
                               SizedBox(height: 20.0),
+                              RoundedButton(
+                                text: 'LOGIN',
+                                press: () {},
+                              ),
                             ])),
                   ),
                 ),

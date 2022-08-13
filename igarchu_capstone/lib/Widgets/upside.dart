@@ -14,8 +14,8 @@ class Upside extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: 200.0,
-          height: 200.0,
+          width: 250.0,
+          height: 255.0,
           color: kPrimaryLightColor,
           child: Padding(
             padding: const EdgeInsets.only(top: 0.0),

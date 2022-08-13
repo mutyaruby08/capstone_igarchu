@@ -31,8 +31,7 @@ class RoundedButton extends StatelessWidget {
       ),
       onPressed: press,
       style: ElevatedButton.styleFrom(
-        //di ko ka change sa color sa button, idk why
-        primary: Colors.black,
+        primary: kbutton1,
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
         textStyle: TextStyle(
           letterSpacing: 2,
