@@ -37,7 +37,7 @@ class UnderPart extends StatelessWidget {
           child: Text(
             navigatorText,
             style: const TextStyle(
-                color: kPrimaryColor,
+                color: kbutton1,
                 fontFamily: 'Poppins',
                 fontSize: 13,
                 fontWeight: FontWeight.w600),

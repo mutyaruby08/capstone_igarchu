@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:igarchu_capstone/Screens/splash_screen.dart';
 
 import 'Screens/login_screen.dart';
+import 'Screens/register_screen.dart';
 import 'constants.dart';
 
 void main() {
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Poppins', fontWeight: FontWeight.bold),
               )
       ),
-      home: const register_screen(),
+      home: SplashScreen(),
     );
   }
 }
