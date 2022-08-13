@@ -3,13 +3,14 @@
 // ignore_for_file: unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:igarchu_capstone/Screens/animal_org.dart';
 import 'package:igarchu_capstone/Widgets/rounded_button.dart';
 
 import '../Widgets/underpart.dart';
-import '../Widgets/upside.dart';
 import '../constants.dart';
 import '../widgets/textfield_container.dart';
 import 'login_screen.dart';
+import 'pet_lover_register_scr.dart';
 
 class register_screen extends StatefulWidget {
 
@@ -24,6 +25,8 @@ class register_screen extends StatefulWidget {
 class _register_screenState extends State<register_screen> {
   final _formKey = GlobalKey<FormState>();
   bool isHidden = true;
+  String dropdownValue = "Pet Lover";
+  var dropdownItems = ["Pet Lover", "Animal Shelter",];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -45,43 +48,53 @@ class _register_screenState extends State<register_screen> {
             ), 
                 child: Column(
                   children: [
-                   Padding(
-                     padding:  EdgeInsets.only(top: 130.0),
-                     child: Container(
+                   SizedBox(height: 30,),
+                   
+                   Container(
+                    height: 200,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/register.png'),
+                        fit: BoxFit.fill,
+                        ),
+
+                    ),
+                   ),
+                   
+                    Container(
                           width: double.infinity,
                         decoration: const BoxDecoration(
                           color: Color.fromRGBO(236, 167, 102, 1),
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(50),
                             topRight: Radius.circular(50),
-                            bottomLeft: Radius.circular(50),
-                            bottomRight: Radius.circular(50),
                           ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            const SizedBox(
+                          children:  <Widget>[
+                            
+                           SizedBox(
                                 height: 20,
                               ),
-                            const Text('REGISTER', 
+                            Text('REGISTER', 
                             style: TextStyle(
                               fontSize: 30, 
                               fontFamily: 'Poppins', 
                               fontWeight: FontWeight.bold, 
                               color: Colors.black)),
-                            const SizedBox(
+                             SizedBox(
                                 height: 20,
-                              ),
-                            Form(
-                              key: _formKey,
-                              child: Column(
-                                children: <Widget>[
+                              ), 
+
+                              Form(
+                                key: _formKey,
+                                child: Column(children: [
                                   TextFieldContainer(
                                     child: TextFormField(
                                       validator: (val) =>
-                                            val!.isEmpty ? 'Enter Name.' : null,
+                                            val!.isEmpty ? 'Enter Full Name.' : null,
                                       cursorColor:Colors.red,
                                       decoration: const InputDecoration(
                                         icon: Icon(
@@ -96,24 +109,7 @@ class _register_screenState extends State<register_screen> {
                                       ),
                                     ),
                                   ),
-                                  TextFieldContainer(
-                                    child: TextFormField(
-                                      validator: (val) =>
-                                            val!.isEmpty ? 'Enter 11 digits number.' : null,
-                                      cursorColor:Colors.red,
-                                      decoration: const InputDecoration(
-                                        icon: Icon(
-                                          Icons.contact_phone,
-                                          color: kbutton2,
-                                        ),
-                                        hintText:"Mobile Number",
-                                        hintStyle: TextStyle(
-                                          fontFamily: 'Poppins',
-                                        ),
-                                        border: InputBorder.none,
-                                      ),
-                                    ),
-                                  ),
+
                                   TextFieldContainer(
                                     child: TextFormField(
                                       validator: (val) =>
@@ -163,14 +159,62 @@ class _register_screenState extends State<register_screen> {
                                         ),
                                       ),
                                     ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
+
+                                    Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "Select User Role",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: kbutton2,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    Container(
+                                      child: DropdownButton(
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          color: kbutton2,
+                                        ),
+                                        value: dropdownValue,
+                                        onChanged: (String? value) {
+                                          setState(() {
+                                            dropdownValue = value!;
+                                          });
+                                        },
+                                        items: dropdownItems.map((String item) {
+                                          return DropdownMenuItem(
+                                              child: Text(item), value: item);
+                                        }).toList(),
+                                      ),
+                                    ),
+                                  ]),
+                      
                                   RoundedButton(
                                     text: 'REGISTER',
-                                    press: () {},
+                                    press: () {
+                                      if (dropdownValue == "Pet Lover") {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    petLoverScreen()));
+                                      } 
+                                      else if (dropdownValue == "Animal Shelter Org") {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    animalOrgScreen()));
+                                        }                                  
+                                    },
                                     ),
-                                   const SizedBox(
+
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   
@@ -183,18 +227,13 @@ class _register_screenState extends State<register_screen> {
                                           MaterialPageRoute(builder: (_) => const LoginScreen()),
                                           );
                                         }),
-                                  const SizedBox(
+                                   SizedBox(
                                     height: 30,
-                                  ),
-                                     
-                                    ],
-                                  )
-
-                        )],
-                              ) 
-                            ),
-                   ),
-           
+                                  ),     
+                                ],)
+                              )
+                        ],)
+                        ), 
                   ],
                 ),)
                  

@@ -7,6 +7,7 @@ import '../Widgets/rounded_button.dart';
 import '../Widgets/underpart.dart';
 import '../Widgets/upside.dart';
 import 'Pawtest/ptest_screens.dart';
+import 'animal_org.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -122,9 +123,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               navigatorText: "Register here",
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>  register_screen()));
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    register_screen()));    
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) =>  register_screen()));
                               },
                             ),
                             ])),
