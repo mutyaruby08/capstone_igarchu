@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../pwidgets.dart/custom_button.dart';
 import '../pwidgets.dart/custome_checkbox.dart';
 
-
 class Question06 extends StatefulWidget {
   final TabController tabController;
 
@@ -46,24 +45,32 @@ class _Question06State extends State<Question06> {
                   style: Theme.of(context).textTheme.headline4),
               SizedBox(height: 20),
               CustomCheckbox(
-                  nValue: "playful&fun",
-                  tabController: widget.tabController,
-                  text: 'I want a pet that is playful and fun'),
+                nValue: "playful&fun",
+                tabController: widget.tabController,
+                text: 'I want a pet that is\nplayful and fun',
+                fontSized: 18,
+              ),
               SizedBox(height: 17),
               CustomCheckbox(
-                  nValue: "calm&gentle",
-                  tabController: widget.tabController,
-                  text: 'I want a pet that is calm and gentle'),
+                nValue: "calm&gentle",
+                tabController: widget.tabController,
+                text: 'I want a pet that is calm\nand gentle',
+                fontSized: 18,
+              ),
               SizedBox(height: 17),
               CustomCheckbox(
-                  nValue: "intelligent&loyal",
-                  tabController: widget.tabController,
-                  text: 'I want a pet intelligent and loyal'),
+                nValue: "intelligent&loyal",
+                tabController: widget.tabController,
+                text: 'I want a pet intelligent\nand loyal',
+                fontSized: 18,
+              ),
               SizedBox(height: 17),
               CustomCheckbox(
-                  nValue: "child-friendly",
-                  tabController: widget.tabController,
-                  text: 'I want a child-friendly pet'),
+                nValue: "child-friendly",
+                tabController: widget.tabController,
+                text: 'I want a child-friendly pet',
+                fontSized: 18, sizeBox: 0,
+              ),
             ],
           ),
           CustomButton(tabController: widget.tabController),

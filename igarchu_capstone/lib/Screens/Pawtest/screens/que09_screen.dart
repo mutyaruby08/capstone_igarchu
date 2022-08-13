@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../pwidgets.dart/custom_button.dart';
 import '../pwidgets.dart/custom_radiobutton.dart';
 
-
 class Question09 extends StatefulWidget {
   final TabController tabController;
 
@@ -43,7 +42,8 @@ class _Question09State extends State<Question09> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'A',
-                text: 'No, this will be my first time',
+                text: 'No, this will be my first\ntime',
+                fontSize: 19,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -51,7 +51,8 @@ class _Question09State extends State<Question09> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'B',
-                text: 'I currently have other pets right now',
+                text: 'I currently have other\npets right now',
+                fontSize: 19,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -59,7 +60,8 @@ class _Question09State extends State<Question09> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'C',
-                text: 'Yes, I owned a pet before',
+                text: 'Yes, I owned a pet\nbefore',
+                fontSize: 19,
               ),
             ],
           ),

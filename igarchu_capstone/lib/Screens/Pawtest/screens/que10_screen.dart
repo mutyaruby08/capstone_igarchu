@@ -44,6 +44,7 @@ class _Question10State extends State<Question10> {
                 onChanged: _valueChangedHandler(),
                 label: 'A',
                 text: 'I’m allergic to fur',
+                fontSize: 20,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -52,6 +53,7 @@ class _Question10State extends State<Question10> {
                 onChanged: _valueChangedHandler(),
                 label: 'B',
                 text: 'I’m allergic to feathers',
+                fontSize: 20,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -60,10 +62,11 @@ class _Question10State extends State<Question10> {
                 onChanged: _valueChangedHandler(),
                 label: 'C',
                 text: 'I’m not allergic to both',
+                fontSize: 20,
               ),
             ],
           ),
-          CustomButton(tabController: widget.tabController),
+          CustomButton(tabController: widget.tabController, text: 'Find your pet match!',),
         ],
       ),
     );

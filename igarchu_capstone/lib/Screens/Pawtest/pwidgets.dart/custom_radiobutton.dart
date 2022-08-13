@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/constants.dart';
 
-
 class CustomRadioButton<T> extends StatelessWidget {
   final TabController tabController;
   final String text;
@@ -12,6 +11,7 @@ class CustomRadioButton<T> extends StatelessWidget {
   final T? groupValue;
   final ValueChanged<T?> onChanged;
   final String label;
+  final double fontSize;
 
   const CustomRadioButton({
     Key? key,
@@ -22,6 +22,7 @@ class CustomRadioButton<T> extends StatelessWidget {
     this.groupValue,
     required this.onChanged,
     required this.label,
+    this.fontSize = 22,
   }) : super(key: key);
 
   Widget _buildLabel() {
@@ -63,7 +64,7 @@ class CustomRadioButton<T> extends StatelessWidget {
       margin: EdgeInsets.all(5),
       child: InkWell(
         onTap: () => onChanged(value),
-        splashColor: kBackground2.withOpacity(0.5),
+        splashColor: kbutton2.withOpacity(0.5),
         child: Padding(
           padding: EdgeInsets.all(5),
           child: Row(
@@ -75,8 +76,8 @@ class CustomRadioButton<T> extends StatelessWidget {
                 text,
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
-                    .copyWith(fontSize: 22),
+                    .headline5!
+                    .copyWith(fontSize: fontSize),
               )
             ],
           ),

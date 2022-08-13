@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../pwidgets.dart/custom_button.dart';
 import '../pwidgets.dart/custom_radiobutton.dart';
 
-
 class Question04 extends StatefulWidget {
   final TabController tabController;
 
@@ -46,6 +45,7 @@ class _Question04State extends State<Question04> {
                 onChanged: _valueChangedHandler(),
                 label: 'A',
                 text: 'I’m basically a neat freak',
+                fontSize: 18,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -53,7 +53,8 @@ class _Question04State extends State<Question04> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'B',
-                text: 'I’m okay with the chewed up furnitures\nand muddy paws',
+                text: 'I’m okay with the chewed\nup furnitures and muddy\npaws',
+                fontSize: 18,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -61,7 +62,8 @@ class _Question04State extends State<Question04> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'C',
-                text: 'If the mess stays in the cage\nit’s fine by me',
+                text: 'If the mess stays in the\ncage it’s fine by me',
+                fontSize: 18,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -69,7 +71,8 @@ class _Question04State extends State<Question04> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'D',
-                text: 'I’m not bothered with fur shedding ',
+                text: 'I’m not bothered with\nfur sheddings',
+                fontSize: 18,
               ),
               CustomRadioButton<String>(
                 tabController: widget.tabController,
@@ -77,7 +80,8 @@ class _Question04State extends State<Question04> {
                 groupValue: _groupValue,
                 onChanged: _valueChangedHandler(),
                 label: 'E',
-                text: 'I’m fine with habitat maintenance',
+                text: 'I’m fine with habitat\nmaintenance',
+                fontSize: 18,
               ),
               // CustomCheckbox(
               //     tabController: tabController,
