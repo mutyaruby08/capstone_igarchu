@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/constants.dart';
 
 import '../Widgets/rounded_button.dart';
+import '../Widgets/underpart.dart';
 import '../Widgets/upside.dart';
+import 'Pawtest/ptest_screens.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -106,8 +109,24 @@ class _LoginScreenState extends State<LoginScreen> {
                               SizedBox(height: 20.0),
                               RoundedButton(
                                 text: 'LOGIN',
-                                press: () {},
+                                press: () {
+                                  Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>  PawtestScreen()));
+                                },
                               ),
+
+                              UnderPart(
+                              title: "Don't have an account?",
+                              navigatorText: "Register here",
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>  register_screen()));
+                              },
+                            ),
                             ])),
                   ),
                 ),
