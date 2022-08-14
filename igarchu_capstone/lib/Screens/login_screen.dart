@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/constants.dart';
+import 'package:provider/provider.dart';
 
 import '../Widgets/rounded_button.dart';
 import '../Widgets/underpart.dart';
 import '../Widgets/upside.dart';
-import 'Pawtest/ptest_screens.dart';
+import '../services/firebase_auth_services.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,8 +18,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<FireAuthService>(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -77,6 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 SizedBox(height: 30.0),
                                 TextField(
+                                    controller: _emailController,
                                     //change value for email
                                     // onChanged: (value) => ,
                                     keyboardType: TextInputType.emailAddress,
@@ -93,6 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             color: kbutton2))),
                                 SizedBox(height: 30.0),
                                 TextField(
+                                    controller: _passwordController,
                                     //change value for password
                                     // onChanged: (value) => ,
                                     keyboardType: TextInputType.emailAddress,
@@ -110,13 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 SizedBox(height: 20.0),
                                 RoundedButton(
                                   text: 'LOGIN',
-                                  press: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                PawtestScreen()));
-                                  },
+                                  press: () => signIn(authService),
                                 ),
                                 UnderPart(
                                   title: "Don't have an account?",
@@ -137,5 +137,14 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void signIn(FireAuthService authService) async {
+    // Check if all required fields are filled up
+    // Sign user in
+    final status = await authService.signIn(
+        _emailController.text, _passwordController.text);
+    // Navigator.push(
+    // context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723775785158",
+    "project_id": "igarchu-53425",
+    "storage_bucket": "igarchu-53425.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723775785158:android:3cd6bb41e3724264476fc7",
+        "android_client_info": {
+          "package_name": "com.example.igarchu_capstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723775785158-p82pqo936c87rmj8eh6jrifmnqnq2ric.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMkeNkvR251CW-d2uSHL_O7XyYcjQh7zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723775785158-p82pqo936c87rmj8eh6jrifmnqnq2ric.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
