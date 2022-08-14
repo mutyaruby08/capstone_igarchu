@@ -8,10 +8,10 @@ import 'package:igarchu_capstone/services/firebase_auth_services.dart';
 import 'package:provider/provider.dart';
 
 import '../Widgets/underpart.dart';
-import '../Widgets/upside.dart';
 import '../classes/petLover.dart';
 import '../constants.dart';
 import '../widgets/textfield_container.dart';
+import 'animal_org.dart';
 import 'login_screen.dart';
 
 class register_screen extends StatefulWidget {
@@ -29,12 +29,21 @@ class _register_screenState extends State<register_screen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool isHidden = true;
+  String dropdownValue = "Individual";
+  var dropdownItems = ["Individual", "Animal Shelter Organization",];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     final authService = Provider.of<FireAuthService>(context);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: kPrimaryLightColor,
+          leading: IconButton(icon: Icon(Icons.arrow_back, color: kbutton2,),
+           onPressed: () { Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(builder: (_) => const LoginScreen()),
+                                          ); },),
+        ),
           body: SizedBox(
         width: size.width,
         height: size.height,
@@ -52,7 +61,7 @@ class _register_screenState extends State<register_screen> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 130.0),
+                padding: EdgeInsets.only(top: 50.0),
                 child: Container(
                     width: double.infinity,
                     decoration: const BoxDecoration(
@@ -71,9 +80,9 @@ class _register_screenState extends State<register_screen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text('REGISTER',
+                        const Text('REGISTER AS INDIVIDUAL USER',
                             style: TextStyle(
-                                fontSize: 30,
+                                fontSize: 20,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black)),
@@ -173,15 +182,27 @@ class _register_screenState extends State<register_screen> {
                                     ),
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
+
                                 RoundedButton(
                                   text: 'REGISTER',
                                   press: () => register(authService),
                                 ),
                                 const SizedBox(
                                   height: 10,
+                                ),
+                                UnderPart(
+                                    title: "DO WANT TO REGISTER AS ANIMAL SHELTER ORGANIZATION?",
+                                    navigatorText: "Register here",
+                                    onTap: () {
+                                      // widget.toggleView();
+                                      Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (_) =>
+                                                const animalOrgScreen()),
+                                      );
+                                    }),
+                                    const SizedBox(
+                                  height: 30,
                                 ),
                                 UnderPart(
                                     title: "Already have an account?",
