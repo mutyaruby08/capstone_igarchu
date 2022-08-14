@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/services/firebase_auth_services.dart';
 import 'package:provider/provider.dart';
+import 'package:igarchu_capstone/Screens/splash_screen.dart';
+import 'package:igarchu_capstone/Screens/Pawtest/ptest_screens.dart';
+
 
 import 'Screens/login_screen.dart';
+import 'Screens/register_screen.dart';
 import 'constants.dart';
 
 void main() {
@@ -32,6 +36,7 @@ class MyApp extends StatelessWidget {
             )),
         home: const LoginScreen(),
       ),
+
     );
   }
 }
