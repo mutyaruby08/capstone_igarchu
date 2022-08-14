@@ -5,6 +5,7 @@ import '../Widgets/underpart.dart';
 import '../constants.dart';
 import '../widgets/textfield_container.dart';
 import 'login_screen.dart';
+import 'register_screen.dart';
 
 class animalOrgScreen extends StatefulWidget {
   const animalOrgScreen({Key? key}) : super(key: key);
@@ -21,6 +22,13 @@ class _animalOrgScreenState extends State<animalOrgScreen> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: kPrimaryLightColor,
+          leading: IconButton(icon: Icon(Icons.arrow_back, color: kbutton2,),
+           onPressed: () { Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(builder: (_) => register_screen()),
+                                          ); },),
+        ),
         body: SizedBox(
           width: size.width,
           height: size.height,
@@ -37,6 +45,9 @@ class _animalOrgScreenState extends State<animalOrgScreen> {
             ), 
                 child: Column(
                   children: [
+                    const SizedBox(
+                                height: 50,
+                              ),
                     Container(
                       width: double.infinity,
                         decoration: const BoxDecoration(
@@ -44,6 +55,8 @@ class _animalOrgScreenState extends State<animalOrgScreen> {
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(50),
                             topRight: Radius.circular(50),
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50),
                           ),
                         ),
                         child: Column(children:  [

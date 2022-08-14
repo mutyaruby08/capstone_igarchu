@@ -25,8 +25,8 @@ class register_screen extends StatefulWidget {
 class _register_screenState extends State<register_screen> {
   final _formKey = GlobalKey<FormState>();
   bool isHidden = true;
-  String dropdownValue = "Pet Lover";
-  var dropdownItems = ["Pet Lover", "Animal Shelter",];
+  String dropdownValue = "Individual";
+  var dropdownItems = ["Individual", "Animal Shelter Organization",];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -48,10 +48,10 @@ class _register_screenState extends State<register_screen> {
             ), 
                 child: Column(
                   children: [
-                   SizedBox(height: 30,),
+                   SizedBox(height: 20,),
                    
                    Container(
-                    height: 200,
+                    height: 180,
                     width: 250,
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -76,16 +76,16 @@ class _register_screenState extends State<register_screen> {
                           children:  <Widget>[
                             
                            SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                             Text('REGISTER', 
                             style: TextStyle(
-                              fontSize: 30, 
+                              fontSize: 20, 
                               fontFamily: 'Poppins', 
                               fontWeight: FontWeight.bold, 
                               color: Colors.black)),
                              SizedBox(
-                                height: 20,
+                                height: 15,
                               ), 
 
                               Form(
@@ -172,7 +172,7 @@ class _register_screenState extends State<register_screen> {
                                       ),
                                     ),
                                     const SizedBox(
-                                      width: 20,
+                                      width: 15,
                                     ),
                                     Container(
                                       child: DropdownButton(
@@ -197,14 +197,14 @@ class _register_screenState extends State<register_screen> {
                                   RoundedButton(
                                     text: 'REGISTER',
                                     press: () {
-                                      if (dropdownValue == "Pet Lover") {
+                                      if (dropdownValue == "Individual") {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     petLoverScreen()));
                                       } 
-                                      else if (dropdownValue == "Animal Shelter Org") {
+                                      else {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -227,9 +227,9 @@ class _register_screenState extends State<register_screen> {
                                           MaterialPageRoute(builder: (_) => const LoginScreen()),
                                           );
                                         }),
-                                   SizedBox(
-                                    height: 30,
-                                  ),     
+                                  //  SizedBox(
+                                  //   height: 30,
+                                  // ),     
                                 ],)
                               )
                         ],)

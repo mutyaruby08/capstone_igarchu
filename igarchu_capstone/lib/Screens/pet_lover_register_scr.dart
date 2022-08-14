@@ -3,6 +3,7 @@
 // ignore_for_file: unnecessary_const, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:igarchu_capstone/Screens/register_screen.dart';
 import 'package:igarchu_capstone/Widgets/rounded_button.dart';
 
 import '../Widgets/underpart.dart';
@@ -29,6 +30,13 @@ class _petLoverScreenState extends State<petLoverScreen> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: kPrimaryLightColor,
+          leading: IconButton(icon: Icon(Icons.arrow_back, color: kbutton2,),
+           onPressed: () { Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(builder: (_) => register_screen()),
+                                          ); },),
+        ),
         body: SizedBox(
           width: size.width,
           height: size.height,
@@ -46,7 +54,7 @@ class _petLoverScreenState extends State<petLoverScreen> {
                 child: Column(
                   children: [
                    Padding(
-                     padding:  EdgeInsets.only(top: 130.0),
+                     padding:  EdgeInsets.only(top: 50.0),
                      child: Container(
                           width: double.infinity,
                         decoration: const BoxDecoration(
