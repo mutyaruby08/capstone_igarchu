@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 import '../pwidgets.dart/custom_button.dart';
+import '../pwidgets.dart/custom_fndmtch_btn.dart';
 import '../pwidgets.dart/custom_radiobutton.dart';
-
 
 class Question10 extends StatefulWidget {
   final TabController tabController;
@@ -66,7 +66,10 @@ class _Question10State extends State<Question10> {
               ),
             ],
           ),
-          CustomButton(tabController: widget.tabController, text: 'Find your pet match!',),
+          CustomFindMatchButton(
+            tabController: widget.tabController,
+            text: 'Find your pet match!',
+          ),
         ],
       ),
     );

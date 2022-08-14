@@ -8,6 +8,7 @@ import '../Widgets/rounded_button.dart';
 import '../Widgets/underpart.dart';
 import '../Widgets/upside.dart';
 import '../services/firebase_auth_services.dart';
+import 'homescreen.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -144,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // Sign user in
     final status = await authService.signIn(
         _emailController.text, _passwordController.text);
-    // Navigator.push(
-    // context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 }
