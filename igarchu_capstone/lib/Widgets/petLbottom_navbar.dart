@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:igarchu_capstone/Screens/Chat/chat_screen.dart';
+import 'package:igarchu_capstone/Screens/Donation/donation_screen.dart';
+import 'package:igarchu_capstone/Screens/Explore/explore_screen.dart';
+import 'package:igarchu_capstone/Screens/Health%20Tracker/ht_screen.dart';
+import 'package:igarchu_capstone/Screens/Profile/profile_screen.dart';
 
 import '../constants.dart';
 
@@ -14,21 +19,20 @@ class buildBottomNavBar extends StatefulWidget {
 class _buildBottomNavBarState extends State<buildBottomNavBar> {
   int currentIndex = 0;
   final screens = [
-    // const MainScreen(),
-    // const ChecklistScreen(),
-    // const BudgetScreen(),
-    // const VendorlistScreen(),
-    // const GuestlistScreen(),
-    // const SettingsScreen()
+    HealthTrackerScreen(),
+    DonationScreen(),
+    ExploreScreen(),
+    ChatScreen(),
+    ProfileScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: IndexedStack(
-      //   index: currentIndex,
-      //   children: (screens),
-      // ),
+      body: IndexedStack(
+        index: currentIndex,
+        children: (screens),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
