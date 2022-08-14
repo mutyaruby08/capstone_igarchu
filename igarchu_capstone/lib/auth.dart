@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/Screens/login_screen.dart';
-import 'package:igarchu_capstone/classes/user.dart';
+import 'package:igarchu_capstone/classes/petLover.dart';
 import 'package:igarchu_capstone/services/firebase_firestore_services.dart';
 import 'package:provider/provider.dart';
 
@@ -14,14 +14,14 @@ class AuthScreen extends StatelessWidget {
     final authService = Provider.of<FireAuthService>(context);
     final firestore = FirestoreService();
     // Handle User Firebase Authentication
-    return StreamBuilder<User?>(
+    return StreamBuilder<PetLover?>(
       stream: authService.user,
-      builder: (_, AsyncSnapshot<User?> snapshot) {
+      builder: (_, AsyncSnapshot<PetLover?> snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
-          final User? user = snapshot.data;
+          final PetLover? user = snapshot.data;
           return user == null
               ? LoginScreen()
-              : StreamProvider<User?>.value(
+              : StreamProvider<PetLover?>.value(
                   // Maintain User state to HomeScreen
                   value: firestore.getUser(user.uid!),
                   initialData: user,

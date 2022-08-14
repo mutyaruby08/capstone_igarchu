@@ -1,37 +1,33 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:igarchu_capstone/classes/user.dart';
+import 'package:igarchu_capstone/classes/petLover.dart';
 
 import 'firebase_firestore_services.dart';
 
 class FireAuthService {
   final _firebaseAuth = auth.FirebaseAuth.instance;
 
-  User? userFromFirebase(auth.User? user) {
+  PetLover? userFromFirebase(auth.User? user) {
     if (user == null) {
       return null;
     }
-
-    return User(uid: user.uid, email: user.email);
+    return PetLover(uid: user.uid, email: user.email);
   }
 
-  Stream<User?>? get user {
+  Stream<PetLover?>? get user {
     return _firebaseAuth.authStateChanges().map(userFromFirebase);
   }
 
-  Future<dynamic> signUp(
-    String email,
-    String password,
-  ) async {
+  Future<dynamic> signUp(PetLover user, String password) async {
     try {
       final credential = await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email,
+        email: user.email!,
         password: password,
       );
       final firestore = FirestoreService();
-      firestore.addUser(credential); // Add user to Firestore collection
+      firestore.addUser(user, credential);
       return userFromFirebase(credential.user);
     } on auth.FirebaseAuthException catch (e) {
-      return e;
+      print(e);
     }
   }
 

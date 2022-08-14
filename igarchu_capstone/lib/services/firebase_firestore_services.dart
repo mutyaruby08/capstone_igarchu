@@ -1,25 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:igarchu_capstone/classes/user.dart';
+import 'package:igarchu_capstone/classes/petLover.dart';
 
 class FirestoreService {
   final _firestore = FirebaseFirestore.instance;
 
-  Future<void> addUser(auth.UserCredential userCred) async {
+  Future<void> addUser(PetLover user, auth.UserCredential userCred) async {
     CollectionReference userCollection = _firestore.collection('users');
 
     return await userCollection
         .doc(userCred.user!.uid)
-        .set(User(uid: userCred.user!.uid).createUserMap(userCred));
+        .set(PetLover(uid: userCred.user!.uid).createPetLoverMap(user));
   }
 
-  Stream<User?> getUser(String uid) {
+  Stream<PetLover?> getUser(String uid) {
     CollectionReference userCollection = _firestore.collection('users');
 
     return userCollection
         .doc(uid)
         .snapshots()
-        .map((snapshot) => User.fromFirestore(snapshot));
+        .map((snapshot) => PetLover.fromFirestore(snapshot));
   }
 }
