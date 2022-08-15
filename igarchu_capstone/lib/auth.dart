@@ -4,6 +4,7 @@ import 'package:igarchu_capstone/classes/petLover.dart';
 import 'package:igarchu_capstone/services/firebase_firestore_services.dart';
 import 'package:provider/provider.dart';
 
+import 'Screens/homescreen.dart';
 import 'services/firebase_auth_services.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class AuthScreen extends StatelessWidget {
                   // Maintain User state to HomeScreen
                   value: firestore.getUser(user.uid!),
                   initialData: user,
-                  // child: const HomeScreen(),
+                  child: const HomeScreen(),
                   catchError: (_, error) {
                     return null;
                   },
