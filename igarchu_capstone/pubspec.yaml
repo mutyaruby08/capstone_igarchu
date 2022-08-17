@@ -72,6 +72,8 @@ flutter:
    - assets/images/adopt.png
    - assets/images/donate.png
    - assets/images/igarchu_logo.png
+   - assets/images/logo.png
+   - assets/images/donation.jpg
   #  - images/a_dot_ham.jpeg
 
 
