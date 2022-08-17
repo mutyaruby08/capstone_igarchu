@@ -2,6 +2,8 @@
 
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:igarchu_capstone/Animal%20Org/Screens/Post%20Adoption/create_adoptee.dart';
+import 'package:igarchu_capstone/Animal%20Org/Screens/Post%20Donation/create_post.dart';
 import 'package:igarchu_capstone/constants.dart';
 
 import '../../Models/pet_adoptee.dart';
@@ -17,14 +19,49 @@ class _PostAdoptScreenState extends State<PostAdoptScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Adoptees'),
-          backgroundColor: kbutton2,
+      appBar: AppBar(
+        backgroundColor: kbutton2,
+        elevation: 0,
+        title: Row(
+          children: const [
+            Expanded(
+                flex: 3,
+                child: Text(
+                  'Post Adoption',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700),
+                )),
+          ],
         ),
-        body: Padding(
+      ),
+      body: SafeArea(
+        child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 317,
+                    ),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: kBackground2,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NewAdopteeForm()),
+                          );
+                        },
+                        child: Text('Add New Adoptee',
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold))),
+                  ],
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: Adoptee.pets.length,
@@ -37,33 +74,9 @@ class _PostAdoptScreenState extends State<PostAdoptScreen> {
                   ),
                 )
               ],
-            )));
-    // return SafeArea(
-    //     child: Scaffold(
-    //   body: Column(
-    //     children: [
-    //       const Spacer(),
-    //       image != null? Image.file(image!,
-    //       width: 160,
-    //       height: 160,
-    //       ): const FlutterLogo(size: 160)
-    //     ],
-    //   ),
-    //   floatingActionButton: FloatingActionButton(
-    //     heroTag: UniqueKey(),
-    //     shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(20),
-    //     ),
-    //     backgroundColor: primaryColor,
-    //     onPressed: () => pickImage(),
-    //     // () => showDialog(
-    //     //   context: context,
-    //     //   builder: (){},
-    //     //   barrierDismissible: true,
-    //     // ),
-    //     child: const Icon(Icons.add),
-    //   ),
-    // ));
+            )),
+      ),
+    );
   }
 }
 
@@ -124,6 +137,9 @@ class PetCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 4.0),
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: kBackground2,
+                      ),
                       onPressed: () {},
                       child: Text('Edit Pet Information',
                           style: TextStyle(
