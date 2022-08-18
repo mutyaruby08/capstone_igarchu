@@ -30,40 +30,45 @@ class _AddAdopteeWidgetState extends State<AddAdopteeWidget> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        backgroundColor: kbutton2,
-        elevation: 0,
-        title: Row(
-          children: const [
-            Expanded(
-                flex: 3,
-                child: Text(
-                  'Pet Information',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
-                )),
-          ],
-        ),
-      ),
-      body: Column(children: [
-         const SizedBox(height: 8),
-              AdopteeFormWidget(
-                onChangedAdopteeID: (adopteeID) => setState(() => this.adopteeID = adopteeID),
-                onChangedName: (name) => setState(() => this.name = name),
-                onChangedColor: (color) => setState(() => this.color = color),
-                onChangedAge: (age) => setState(() => this.age = age),
-                onChangedType: (type) => setState(() => this.type = type),
-                onChangedSize: (size) => setState(() => this.size = size),
-                onChangedBreed: (breed) => setState(() => this.breed = breed),
-                onChangedGender: (gender) => setState(() => this.gender = gender),
-                onChangedPersona1: (persona1) => setState(() => this.persona1 = persona1),
-                onChangedDescription: (description) => setState(() => this.description = description),
-                onSavedAdoptee: addAdoptee,
+            appBar: AppBar(
+              backgroundColor: kbutton2,
+              elevation: 0,
+              title: Row(
+                children: const [
+                  Expanded(
+                      flex: 3,
+                      child: Text(
+                        'Pet Information',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      )),
+                ],
               ),
-      ],)
-    ));
+            ),
+            body: Column(
+              children: [
+                const SizedBox(height: 8),
+                AdopteeFormWidget(
+                  onChangedAdopteeID: (adopteeID) =>
+                      setState(() => this.adopteeID = adopteeID),
+                  onChangedName: (name) => setState(() => this.name = name),
+                  onChangedColor: (color) => setState(() => this.color = color),
+                  onChangedAge: (age) => setState(() => this.age = age),
+                  onChangedType: (type) => setState(() => this.type = type),
+                  onChangedSize: (size) => setState(() => this.size = size),
+                  onChangedBreed: (breed) => setState(() => this.breed = breed),
+                  onChangedGender: (gender) =>
+                      setState(() => this.gender = gender),
+                  onChangedPersona1: (persona1) =>
+                      setState(() => this.persona1 = persona1),
+                  onChangedDescription: (description) =>
+                      setState(() => this.description = description),
+                  onSavedAdoptee: addAdoptee,
+                ),
+              ],
+            )));
   }
   //  AlertDialog(
   //       content: Form(
@@ -118,6 +123,7 @@ class _AddAdopteeWidgetState extends State<AddAdopteeWidget> {
         description: description,
       );
 
+      print('${adoptee}');
       final provider = Provider.of<AdopteeProvider>(context, listen: false);
       provider.addAdoptee(adoptee);
 

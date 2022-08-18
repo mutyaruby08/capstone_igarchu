@@ -19,7 +19,7 @@ class PetCard extends StatelessWidget {
       margin: const EdgeInsets.all(10.0),
       padding: const EdgeInsets.all(3.0),
       decoration: BoxDecoration(
-        color: kBackground1,
+        color: kBackground1, 
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(

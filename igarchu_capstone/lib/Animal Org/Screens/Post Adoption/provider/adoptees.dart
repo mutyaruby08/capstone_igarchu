@@ -52,30 +52,30 @@ class AdopteeProvider extends ChangeNotifier {
   //   return todo.isDone;
   // }
 
-  void updateTodo(
-    Adoptee adoptee,
-    int adopteeID,
-    String name,
-    String color,
-    int age,
-    String type,
-    String size,
-    String breed,
-    String gender,
-    String description,
-    String persona1,
-  ) {
-    adoptee.adopteeID = adopteeID;
-    adoptee.name = name;
-    adoptee.color = color;
-    adoptee.age = age;
-    adoptee.type = type;
-    adoptee.size = size;
-    adoptee.breed = breed;
-    adoptee.gender = gender;
-    adoptee.description = description;
-    adoptee.persona1 = persona1;
+  // void updateAdoptee(
+  //   Adoptee adoptee,
+  //   int adopteeID,
+  //   String name,
+  //   String color,
+  //   int age,
+  //   String type,
+  //   String size,
+  //   String breed,
+  //   String gender,
+  //   String description,
+  //   String persona1,
+  // ) {
+  //   adoptee.adopteeID = adopteeID;
+  //   adoptee.name = name;
+  //   adoptee.color = color;
+  //   adoptee.age = age;
+  //   adoptee.type = type;
+  //   adoptee.size = size;
+  //   adoptee.breed = breed;
+  //   adoptee.gender = gender;
+  //   adoptee.description = description;
+  //   adoptee.persona1 = persona1;
 
-    notifyListeners();
-  }
+  //   notifyListeners();
+  // }
 }

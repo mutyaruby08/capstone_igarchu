@@ -5,21 +5,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
 class Adoptee {
-  int adopteeID;
-  String name;
-  String color;
-  int age;
-  String type;
-  String size;
-  String breed;
-  String gender;
-  String description;
-  String? persona1; //personality sa pet
-  String? persona2;
-  String? persona3;
-  String? persona4;
-  String? imageUrl;
-  bool? isAdopted;
+ final int adopteeID;
+ final String name;
+ final String color;
+final int age;
+  final String type;
+ final  String size;
+  final String breed;
+  final String gender;
+  final String description;
+ final  String? persona1; //personality sa pet
+  final String? persona2;
+  final String? persona3;
+ final  String? persona4;
+ final  String? imageUrl;
+  final bool? isAdopted;
 
   Adoptee({
     required this.adopteeID,
