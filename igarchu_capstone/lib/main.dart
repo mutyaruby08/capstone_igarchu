@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/Animal%20Org/Screens/Post%20Adoption/post_adoption.dart';
+import 'package:igarchu_capstone/Animal%20Org/Screens/Post%20Adoption/provider/adoptees.dart';
 import 'package:igarchu_capstone/firebase_options.dart';
 import 'package:igarchu_capstone/services/firebase_auth_services.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<FireAuthService>(create: (_) => FireAuthService()),
+        ChangeNotifierProvider.value(value: AdopteeProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -38,8 +40,8 @@ class MyApp extends StatelessWidget {
               headline2:
                   TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
             )),
-        // home: const SplashScreen(),
-        home: PostAdoptScreen(),
+        home: const SplashScreen(),
+        // home: PostAdoptScreen(),
       ),
     );
   }
