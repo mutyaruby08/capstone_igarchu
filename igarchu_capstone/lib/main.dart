@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
               headline2:
                   TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
             )),
-        // home: const SplashScreen(),
-        home: PostAdoptScreen(),
+        home: const SplashScreen(),
+        // home: PostAdoptScreen(),
       ),
     );
   }

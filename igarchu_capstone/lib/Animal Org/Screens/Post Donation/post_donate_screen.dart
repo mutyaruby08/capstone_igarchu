@@ -56,7 +56,7 @@ class _PostDonateScreenState extends State<PostDonateScreen> {
                                           onPressed: () { 
                                              Navigator.push(
                                               context,
-                                            MaterialPageRoute(builder: (context) => const CreatePostAdoption()),
+                                            MaterialPageRoute(builder: (context) =>  CreatePostAdoption()),
                                             );
                                            },
                                           color: Colors.white,
@@ -76,7 +76,7 @@ class _PostDonateScreenState extends State<PostDonateScreen> {
                           onPressed: (){
                             Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const CreatePostAdoption()),
+                            MaterialPageRoute(builder: (context) => CreatePostAdoption()),
                             );
                           }, 
                           icon: const Icon(Icons.add_circle, color: kBackground2, size: 40,)),

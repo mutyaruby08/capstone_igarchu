@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -40,6 +41,8 @@ class Donation extends Equatable {
     ]
   );
 
+  String? get uid => null;
+
   Donation copyWith({
     int? id,
     String? imageUrl,
@@ -72,21 +75,20 @@ class Donation extends Equatable {
     };
   }
 
-  factory Donation.fromMap(Map<String, dynamic>map){
+  factory Donation.fromSnapshot(DocumentSnapshot snap){
       return Donation(
-        id: map ['id'], 
-        imageUrl: map ['imageUrl'], 
-        orgName: map ['orgName'], 
-        description: map ['description'], 
-        location: map ['location'], 
-        days: map ['days'],
-        targetAmount: map['targetAmount'],
+        id: snap ['id'], 
+        imageUrl: snap ['imageUrl'], 
+        orgName: snap ['orgName'], 
+        description: snap ['description'], 
+        location: snap ['location'], 
+        days: snap ['days'],
+        targetAmount: snap['targetAmount'],
         );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Donation.fromJson(String source) => Donation.fromMap(json.decode(source));
 
   @override
   bool get stringify => true;

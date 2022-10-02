@@ -18,6 +18,21 @@ class DonationCard extends StatelessWidget {
         color: kbutton2,
           child: Column(
             children: [
+               Padding(
+                      padding: const EdgeInsets.only(top:10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                        const Icon(Icons.location_on_rounded, color: kbutton1, size: 20,),
+                        const SizedBox(width: 10,),
+                        Text('${donation.id}', style: const TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins'
+                        ),)
+                      ]),
+                    ),
               Container(
                 padding: const EdgeInsets.only(top: 20, bottom: 20),
                 height: 200, 

@@ -1,7 +1,5 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:igarchu_capstone/Animal%20Org/Screens/Post%20Adoption/post_adoption.dart';
 import 'package:image_picker/image_picker.dart';
