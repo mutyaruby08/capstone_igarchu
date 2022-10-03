@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
+import 'File Organizer/file_organizer_screen.dart';
 
 class HealthTrackerScreen extends StatefulWidget {
   HealthTrackerScreen({Key? key}) : super(key: key);
@@ -58,7 +58,7 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
               width: 15.0,
             ),
             SizedBox.fromSize(
-              size: Size(100.0, 100.0),
+              size: Size(200.0, 200.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15.0),
                 child: Material(
@@ -69,16 +69,25 @@ class _HealthTrackerScreenState extends State<HealthTrackerScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        Icon(
-                          Icons.folder,
-                          size: 50,
-                          color: Colors.white,
-                        ),
+                      children: <Widget>[                      
+                          IconButton(
+                            onPressed: (){
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => file_organizer_screen()),
+                              );
+                            }, 
+                            icon: Icon(
+                            Icons.folder,
+                            size: 60,
+                            color: Colors.white,
+                          ), ),
+                        
+                        SizedBox(height: 20),
                         Text(
                           "File Organizer",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 15.0),
+                          style: TextStyle(color: Colors.white, fontSize: 20.0),
                         ),
                       ],
                     ),
